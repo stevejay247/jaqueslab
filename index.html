@@ -5,176 +5,201 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jaques Lab</title>
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --bg: #0e0e0e;
-    --bg2: #1a1714;
-    --bg3: #231f1b;
-    --border: #2a2724;
-    --text: #f0ede8;
-    --muted: #6b6560;
-    --faint: #3a3733;
-    --amber: #c8a96e;
-  }
-  html { background: var(--bg); }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-  a { color: var(--amber); text-decoration: none; }
-  a:hover { color: var(--text); }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0e0e0e;
+  --bg2: #1a1714;
+  --bg3: #231f1b;
+  --border: #2a2724;
+  --text: #f0ede8;
+  --muted: #6b6560;
+  --faint: #3a3733;
+  --amber: #c8a96e;
+}
+html { background: var(--bg); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--amber); text-decoration: none; }
+a:hover { color: var(--text); }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+}
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo-mark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.logo-mark span {
+  border-radius: 2px;
+  display: block;
+}
+.logo-mark span:nth-child(1) { background: var(--amber); }
+.logo-mark span:nth-child(2) { background: var(--faint); }
+.logo-mark span:nth-child(3) { background: var(--faint); }
+.logo-mark span:nth-child(4) { background: var(--muted); }
+.logo-name {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.hero {
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.hero p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 460px;
+  line-height: 1.7;
+}
+.apps {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 40px;
+}
+.app-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+  padding: 32px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.app-card:last-child {
+  margin-bottom: 0;
+}
+.app-card h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+.app-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 420px;
+}
+.app-badge {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(200, 169, 110, 0.08);
+  border: 1px solid rgba(200, 169, 110, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
 
-  header {
-    border-bottom: 1px solid var(--border);
-    padding: 0 40px;
-  }
-  .header-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .logo-mark {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-  }
-  .logo-mark span {
-    border-radius: 2px;
-    display: block;
-  }
-  .logo-mark span:nth-child(1) { background: var(--amber); }
-  .logo-mark span:nth-child(2) { background: var(--faint); }
-  .logo-mark span:nth-child(3) { background: var(--faint); }
-  .logo-mark span:nth-child(4) { background: var(--muted); }
-  .logo-name {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--text);
-  }
+/* App Store badge + icon block */
+.app-store-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.app-store-badge {
+  display: block;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.app-store-badge:hover {
+  opacity: 0.8;
+}
+.app-store-badge svg {
+  display: block;
+}
+.app-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: block;
+  border: 1px solid var(--border);
+}
 
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .hero {
-    padding: 100px 0 80px;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-size: clamp(36px, 6vw, 56px);
-    font-weight: 300;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    color: var(--text);
-    margin-bottom: 24px;
-  }
-  .hero p {
-    font-size: 17px;
-    color: var(--muted);
-    max-width: 460px;
-    line-height: 1.7;
-  }
-
-  .apps {
-    padding: 64px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--faint);
-    margin-bottom: 40px;
-  }
-  .app-card {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: start;
-    gap: 24px;
-    padding: 32px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-  }
-  .app-card h2 {
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 10px;
-    letter-spacing: -0.3px;
-  }
-  .app-card p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.65;
-    max-width: 420px;
-  }
-  .app-badge {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--amber);
-    background: rgba(200, 169, 110, 0.08);
-    border: 1px solid rgba(200, 169, 110, 0.2);
-    padding: 6px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-
-  .contact {
-    padding: 64px 0;
-  }
-  .contact p {
-    font-size: 15px;
-    color: var(--muted);
-  }
-  .contact a {
-    font-size: 15px;
-  }
-
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 24px 40px;
-  }
-  .footer-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: var(--faint);
-  }
-  .footer-inner a { color: var(--faint); font-size: 12px; }
-  .footer-inner a:hover { color: var(--muted); }
-
-  @media (max-width: 600px) {
-    header, footer { padding: 0 20px; }
-    main { padding: 0 20px; }
-    .footer-inner { padding: 20px 0; }
-    .app-card { grid-template-columns: 1fr; }
-    .app-badge { width: fit-content; }
-  }
+.contact {
+  padding: 64px 0;
+}
+.contact p {
+  font-size: 15px;
+  color: var(--muted);
+}
+.contact a {
+  font-size: 15px;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 40px;
+}
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--faint);
+}
+.footer-inner a { color: var(--faint); font-size: 12px; }
+.footer-inner a:hover { color: var(--muted); }
+@media (max-width: 600px) {
+  header, footer { padding: 0 20px; }
+  main { padding: 0 20px; }
+  .footer-inner { padding: 20px 0; }
+  .app-card { grid-template-columns: 1fr; }
+  .app-badge { width: fit-content; }
+  .app-store-block { align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -197,13 +222,53 @@
 
   <section class="apps">
     <p class="section-label">Apps</p>
+
     <div class="app-card">
       <div>
         <h2>NightRate</h2>
         <p>Make the most of off-peak electricity tariffs. Enter your appliances and cheap-rate hours — NightRate tells you exactly when to run them and what delay to set.</p>
       </div>
-      <span class="app-badge">Coming soon</span>
+      <div class="app-store-block">
+        <a class="app-store-badge" href="https://apps.apple.com/gb/app/nightrate/id6762389753" target="_blank" rel="noopener" aria-label="Download NightRate on the App Store">
+          <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="40" rx="8" fill="#000"/>
+            <rect x="0.5" y="0.5" width="119" height="39" rx="7.5" fill="none" stroke="#a6a6a6" stroke-width="1"/>
+            <path d="M22.5 20.3c0-2.7 2.2-4 2.3-4.1-1.3-1.9-3.2-2.1-3.9-2.2-1.7-.2-3.2 1-4 1s-2.1-1-3.5-1c-1.8 0-3.5 1.1-4.4 2.7-1.9 3.2-.5 8 1.3 10.6.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.8 3.4-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.2-2.6.6-.9 1.1-1.9 1.4-3-.1 0-2.5-1-2.5-3.9z" fill="#fff"/>
+            <path d="M20 13.2c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.6.8-1.2 2-1.1 3.2 1.1.1 2.2-.6 3-1.5z" fill="#fff"/>
+            <text x="35" y="16" font-family="-apple-system, 'Helvetica Neue', sans-serif" font-size="9" fill="#fff" letter-spacing="0.3">Download on the</text>
+            <text x="35" y="28" font-family="-apple-system, 'Helvetica Neue', sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="-0.3">App Store</text>
+          </svg>
+        </a>
+        <img class="app-icon"
+          data-app-id="6762389753"
+          alt="NightRate app icon"
+          style="display:none">
+      </div>
     </div>
+
+    <div class="app-card">
+      <div>
+        <h2>SleepWindow</h2>
+        <p>Work backwards from your wake-up time to find a better bedtime. Choose when you want to wake up and SleepWindow calculates three bedtime options based on 6, 5, or 4 sleep cycles — with a small allowance for the time it takes to fall asleep. The goal is to wake at the end of a cycle, not in the middle of one.</p>
+      </div>
+      <div class="app-store-block">
+        <a class="app-store-badge" href="https://apps.apple.com/gb/app/sleepwindow/id6763144727" target="_blank" rel="noopener" aria-label="Download SleepWindow on the App Store">
+          <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="40" rx="8" fill="#000"/>
+            <rect x="0.5" y="0.5" width="119" height="39" rx="7.5" fill="none" stroke="#a6a6a6" stroke-width="1"/>
+            <path d="M22.5 20.3c0-2.7 2.2-4 2.3-4.1-1.3-1.9-3.2-2.1-3.9-2.2-1.7-.2-3.2 1-4 1s-2.1-1-3.5-1c-1.8 0-3.5 1.1-4.4 2.7-1.9 3.2-.5 8 1.3 10.6.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.8 3.4-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.2-2.6.6-.9 1.1-1.9 1.4-3-.1 0-2.5-1-2.5-3.9z" fill="#fff"/>
+            <path d="M20 13.2c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.6.8-1.2 2-1.1 3.2 1.1.1 2.2-.6 3-1.5z" fill="#fff"/>
+            <text x="35" y="16" font-family="-apple-system, 'Helvetica Neue', sans-serif" font-size="9" fill="#fff" letter-spacing="0.3">Download on the</text>
+            <text x="35" y="28" font-family="-apple-system, 'Helvetica Neue', sans-serif" font-size="15" font-weight="600" fill="#fff" letter-spacing="-0.3">App Store</text>
+          </svg>
+        </a>
+        <img class="app-icon"
+          data-app-id="6763144727"
+          alt="SleepWindow app icon"
+          style="display:none">
+      </div>
+    </div>
+
   </section>
 
   <section class="contact">
@@ -218,6 +283,24 @@
     <a href="/privacy">Privacy Policy</a>
   </div>
 </footer>
+
+<script>
+  // Fetch app icons via iTunes lookup API (JSONP-friendly via script tag trick)
+  const icons = document.querySelectorAll('img[data-app-id]');
+  icons.forEach(img => {
+    const id = img.dataset.appId;
+    fetch(`https://itunes.apple.com/lookup?id=${id}&country=gb`)
+      .then(r => r.json())
+      .then(data => {
+        const url = data?.results?.[0]?.artworkUrl512 || data?.results?.[0]?.artworkUrl100;
+        if (url) {
+          img.src = url;
+          img.style.display = 'block';
+        }
+      })
+      .catch(() => {});
+  });
+</script>
 
 </body>
 </html>

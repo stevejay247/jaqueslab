@@ -3,108 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — NightRate · Jaques Lab</title>
+<title>Privacy Policy — Jaques Lab</title>
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --bg: #0e0e0e;
-    --bg2: #1a1714;
-    --border: #2a2724;
-    --text: #f0ede8;
-    --muted: #6b6560;
-    --faint: #3a3733;
-    --amber: #c8a96e;
-  }
-  html { background: var(--bg); }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-  a { color: var(--amber); text-decoration: none; }
-  a:hover { color: var(--text); }
-
-  header {
-    border-bottom: 1px solid var(--border);
-    padding: 0 40px;
-  }
-  .header-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .logo-mark {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-  }
-  .logo-mark span { border-radius: 2px; display: block; }
-  .logo-mark span:nth-child(1) { background: var(--amber); }
-  .logo-mark span:nth-child(2) { background: var(--faint); }
-  .logo-mark span:nth-child(3) { background: var(--faint); }
-  .logo-mark span:nth-child(4) { background: var(--muted); }
-  .logo-name {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--text);
-  }
-
-  main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 72px 40px 96px;
-  }
-
-  .back {
-    font-size: 13px;
-    color: var(--faint);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 48px;
-  }
-  .back:hover { color: var(--muted); }
-
-  h1 {
-    font-size: 32px;
-    font-weight: 300;
-    letter-spacing: -0.5px;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-  .meta {
-    font-size: 13px;
-    color: var(--faint);
-    margin-bottom: 56px;
-  }
-  h2 {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin: 40px 0 14px;
-  }
-  p {
-    font-size: 16px;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-
-  @media (max-width: 600px) {
-    header { padding: 0 20px; }
-    main { padding: 48px 20px 80px; }
-  }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0e0e0e;
+  --bg2: #1a1714;
+  --border: #2a2724;
+  --text: #f0ede8;
+  --muted: #6b6560;
+  --faint: #3a3733;
+  --amber: #c8a96e;
+}
+html { background: var(--bg); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--amber); text-decoration: none; }
+a:hover { color: var(--text); }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+}
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo-mark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.logo-mark span { border-radius: 2px; display: block; }
+.logo-mark span:nth-child(1) { background: var(--amber); }
+.logo-mark span:nth-child(2) { background: var(--faint); }
+.logo-mark span:nth-child(3) { background: var(--faint); }
+.logo-mark span:nth-child(4) { background: var(--muted); }
+.logo-name {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.back {
+  display: inline-block;
+  margin: 40px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.back:hover { color: var(--amber); }
+.page-header {
+  padding: 48px 0 56px;
+  border-bottom: 1px solid var(--border);
+}
+.page-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+.page-header h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.page-header .meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+.content {
+  padding: 56px 0 80px;
+}
+.content section {
+  margin-bottom: 48px;
+}
+.content section:last-child {
+  margin-bottom: 0;
+}
+.content h2 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 16px;
+}
+.content p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 580px;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 40px;
+}
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--faint);
+}
+.footer-inner a { color: var(--faint); font-size: 12px; }
+.footer-inner a:hover { color: var(--muted); }
+@media (max-width: 600px) {
+  header, footer { padding: 0 20px; }
+  main { padding: 0 20px; }
+  .footer-inner { padding: 20px 0; }
+}
 </style>
 </head>
 <body>
@@ -119,35 +149,65 @@
 </header>
 
 <main>
-  <a href="/" class="back">&#8592; Jaques Lab</a>
+  <a class="back" href="/">← Jaques Lab</a>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">NightRate &nbsp;·&nbsp; Last updated April 2026</p>
+  <div class="page-header">
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Jaques Lab &middot; Last updated April 2026</p>
+  </div>
 
-  <h2>Overview</h2>
-  <p>NightRate is designed to work without collecting any personal data. This policy explains what that means in practice.</p>
+  <div class="content">
 
-  <h2>Data we collect</h2>
-  <p>We collect nothing. NightRate does not collect, store, or transmit any personal information.</p>
+    <section>
+      <h2>Overview</h2>
+      <p>All apps made by Jaques Lab are built on the same principle: they do what they say, locally, without collecting anything about you. This policy covers every app published under the Jaques Lab name.</p>
+    </section>
 
-  <h2>Data stored on your device</h2>
-  <p>The app stores your appliance settings and tariff times locally on your device. This data never leaves your device and is not accessible to us.</p>
+    <section>
+      <h2>Data we collect</h2>
+      <p>None. Jaques Lab apps do not collect, store, or transmit any personal information. There are no analytics, no usage tracking, and no crash reporting sent anywhere.</p>
+    </section>
 
-  <h2>Third-party services</h2>
-  <p>NightRate does not use any third-party analytics, advertising networks, or crash reporting services. No data is shared with third parties.</p>
+    <section>
+      <h2>Data stored on your device</h2>
+      <p>Some apps store your settings or preferences locally on your device — for example, appliance configurations or time format preferences. This data stays on your device and is never accessible to us.</p>
+    </section>
 
-  <h2>Account creation</h2>
-  <p>NightRate does not require an account. No sign-up, no login, no email address.</p>
+    <section>
+      <h2>Third-party services</h2>
+      <p>Jaques Lab apps do not integrate with third-party analytics platforms, advertising networks, or data brokers. No information is shared with any third party.</p>
+    </section>
 
-  <h2>Children</h2>
-  <p>NightRate does not collect data from anyone, including children.</p>
+    <section>
+      <h2>Accounts</h2>
+      <p>None of our apps require an account. No sign-up, no login, no email address.</p>
+    </section>
 
-  <h2>Changes to this policy</h2>
-  <p>If we make changes to this policy, we will update the date at the top of this page.</p>
+    <section>
+      <h2>Children</h2>
+      <p>Our apps do not collect data from anyone, including children.</p>
+    </section>
 
-  <h2>Contact</h2>
-  <p>Questions about this policy — <a href="mailto:hello@jaqueslab.uk">hello@jaqueslab.uk</a></p>
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>If this policy changes, the date at the top of this page will be updated. We'll only update it if something meaningful changes, which given the above, would be unusual.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about this policy — <a href="mailto:hello@jaqueslab.uk">hello@jaqueslab.uk</a></p>
+    </section>
+
+  </div>
 </main>
+
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2026 Jaques Lab</span>
+    <a href="/privacy">Privacy Policy</a>
+  </div>
+</footer>
 
 </body>
 </html>
