@@ -285,20 +285,24 @@ footer {
 </footer>
 
 <script>
-  // Fetch app icons via iTunes lookup API (JSONP-friendly via script tag trick)
-  const icons = document.querySelectorAll('img[data-app-id]');
-  icons.forEach(img => {
+  function itunesCallback(id, data) {
+    const url = data?.results?.[0]?.artworkUrl512 || data?.results?.[0]?.artworkUrl100;
+    if (!url) return;
+    const img = document.querySelector(`img[data-app-id="${id}"]`);
+    if (img) {
+      img.src = url;
+      img.style.display = 'block';
+    }
+  }
+
+  document.querySelectorAll('img[data-app-id]').forEach(img => {
     const id = img.dataset.appId;
-    fetch(`https://itunes.apple.com/lookup?id=${id}&country=gb`)
-      .then(r => r.json())
-      .then(data => {
-        const url = data?.results?.[0]?.artworkUrl512 || data?.results?.[0]?.artworkUrl100;
-        if (url) {
-          img.src = url;
-          img.style.display = 'block';
-        }
-      })
-      .catch(() => {});
+    const callbackName = `itcb_${id}`;
+    window[callbackName] = (data) => itunesCallback(id, data);
+    const script = document.createElement('script');
+    script.src = `https://itunes.apple.com/lookup?id=${id}&country=gb&callback=${callbackName}`;
+    script.onerror = () => {};
+    document.body.appendChild(script);
   });
 </script>
 
